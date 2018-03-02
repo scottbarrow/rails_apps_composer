@@ -255,6 +255,11 @@ stage_two do
 FILE
     end
   end
+  ## Dotenv Gem
+  if prefer :local_env_file, 'dotenv'
+    create_file '.env'
+    create_file '.env.test'
+  end
   ## Foreman Gem
   if prefer :local_env_file, 'foreman'
     create_file '.env' do <<-FILE
