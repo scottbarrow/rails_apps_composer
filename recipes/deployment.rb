@@ -15,7 +15,7 @@ if prefer :deployment, 'heroku'
 end
 
 if prefer :deployment, 'capistrano3'
-  say_wizard "installing gems for Capistrano"
+  say_wizard "installing gems required for Capistrano"
   add_gem 'capistrano', '~> 3.0.1', group: :development
   add_gem 'capistrano-rvm', '~> 0.1.1', group: :development
   add_gem 'capistrano-bundler', group: :development
