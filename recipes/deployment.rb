@@ -2,8 +2,26 @@
 # https://github.com/RailsApps/rails_apps_composer/blob/master/recipes/deployment.rb
 
 prefs[:deployment] = multiple_choice "Prepare for deployment?", [["no", "none"],
+    ["Cloud66", "cloud66"],
     ["Heroku", "heroku"],
     ["Capistrano", "capistrano3"]] unless prefs.has_key? :deployment
+
+if prefer :deployment, 'cloud66'
+  stage_two do
+    say_wizard "recipe stage two"
+    say_wizard "installing Cloud66 toolbelt"
+    # Fetch the download script
+    get "https://s3.amazonaws.com/downloads.cloud66.com/cx_installation/cx_install.sh" do |content|
+      run content, verbose: false, capture: false
+      "./tmp/cx_install.sh"
+    end
+    # Cleanup
+    remove_file "/tmp/c66_toolbelt.tar.gz"
+    remove_file "./tmp/cx_install.sh"
+    # Create C66 manifest file
+    create_file "./.cloud66/manifest.yml"
+  end
+end
 
 if prefer :deployment, 'heroku'
   say_wizard "installing gems for Heroku"
