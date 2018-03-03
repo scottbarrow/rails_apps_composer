@@ -9,7 +9,7 @@ prefs[:rvmrc] = false
 prefs[:templates] = 'erb'
 
 prefs[:gems] = []
-prefs[:railsapps] = 'rails3-devise-rspec-cucumber'
+prefs[:parbaked] = 'rails3-devise-rspec-cucumber'
 say_wizard "selected rails3-devise-rspec-cucumber testing recipe"
 __END__
 name:                rails3_devise_rspec_cucumber_testing_recipe

@@ -177,5 +177,5 @@ name: setup
 description: "Make choices for your application."
 author: RailsApps
 
-run_after: [git, railsapps]
+run_after: [git, parbaked]
 category: configuration

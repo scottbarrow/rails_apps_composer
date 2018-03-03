@@ -11,7 +11,7 @@ prefs[:templates] = 'erb'
 prefs[:main_branch] = 'wip'
 prefs[:prelaunch_branch] = 'master'
 prefs[:gems] = %w[ selenium-webdriver ]
-prefs[:railsapps] = 'rails-prelaunch-signup'
+prefs[:parbaked] = 'rails-prelaunch-signup'
 say_wizard "selected rails-prelaunch-signup testing recipe"
 __END__
 name:                rails_prelaunch_signup_testing_recipe

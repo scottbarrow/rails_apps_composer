@@ -9,7 +9,7 @@ prefs[:rvmrc] = false
 prefs[:templates] = 'erb'
 
 prefs[:gems] = []
-prefs[:railsapps] = 'rails3-subdomains'
+prefs[:parbaked] = 'rails3-subdomains'
 say_wizard "selected rails3-subdomains testing recipe"
 __END__
 name:                rails3_subdomains_testing_recipe

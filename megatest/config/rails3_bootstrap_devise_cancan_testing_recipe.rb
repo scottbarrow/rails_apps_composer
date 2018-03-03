@@ -9,7 +9,7 @@ prefs[:rvmrc] = false
 prefs[:templates] = 'erb'
 
 prefs[:gems] = []
-prefs[:railsapps] = 'rails3-bootstrap-devise-cancan'
+prefs[:parbaked] = 'rails3-bootstrap-devise-cancan'
 say_wizard "selected rails3-bootstrap-devise-cancan testing recipe"
 __END__
 name:                rails3_bootstrap_devise_cancan_testing_recipe

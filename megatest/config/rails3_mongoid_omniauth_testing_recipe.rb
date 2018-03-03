@@ -9,7 +9,7 @@ prefs[:rvmrc] = false
 prefs[:templates] = 'erb'
 
 prefs[:gems] = []
-prefs[:railsapps] = 'rails3-mongoid-omniauth'
+prefs[:parbaked] = 'rails3-mongoid-omniauth'
 say_wizard "selected rails3-mongoid-omniauth testing recipe"
 __END__
 name:                rails3_mongoid_omniauth_testing_recipe

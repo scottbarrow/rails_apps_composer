@@ -9,7 +9,7 @@ prefs[:rvmrc] = false
 prefs[:templates] = 'erb'
 
 prefs[:gems] = %w[ selenium-webdriver ]
-prefs[:railsapps] = 'rails-stripe-membership-saas'
+prefs[:parbaked] = 'rails-stripe-membership-saas'
 say_wizard "selected rails-stripe-membership-saas testing recipe"
 __END__
 name:                rails_stripe_membership_saas_testing_recipe

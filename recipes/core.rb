@@ -10,7 +10,7 @@ name: core
 description: "Select all core recipes."
 author: RailsApps
 
-requires: [git, railsapps,
+requires: [git, parbaked,
   learn_rails,
   rails_bootstrap,
   rails_foundation,

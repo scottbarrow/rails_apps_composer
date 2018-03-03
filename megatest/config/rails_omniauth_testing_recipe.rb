@@ -14,8 +14,8 @@ prefs[:frontend] = 'none'
 prefs[:omniauth_provider] = 'twitter'
 
 prefs[:gems] = []
-prefs[:apps4] = 'railsapps'
-prefs[:railsapps]             = 'rails-omniauth'
+prefs[:apps4] = 'parbaked'
+prefs[:parbaked]              = 'rails-omniauth'
 prefs[:rails_4_1_starter_app] = 'rails-omniauth'
 prefs[:pry] = true
 prefs[:deployment] = 'capistrano3'

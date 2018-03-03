@@ -14,7 +14,7 @@ end
 stage_two do
   say_wizard "recipe stage two"
   unless prefer :analytics, 'none'
-    # don't add the gem if it has already been added by the railsapps recipe
+    # don't add the gem if it has already been added by the parbaked recipe
     add_gem 'rails_apps_pages', :group => :development unless prefs[:apps4]
   end
   case prefs[:analytics]
