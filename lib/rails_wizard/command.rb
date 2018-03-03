@@ -152,10 +152,10 @@ module RailsWizard
         default_args = defaults["args"] || {}
         s = 'Would you like to skip'
 
-        question = "#{s} Test::Unit? (yes for RSpec)"
+        question = "#{s} Test::Unit? (choose y if installing RSpec)"
         args << "-T" if ask_for_arg(question, default_args[:skip_test_unit])
 
-        question = "#{s} Active Record? (yes for MongoDB)"
+        question = "#{s} Active Record? (choose y if using MongoDB)"
         args << "-O" if ask_for_arg(question, default_args[:skip_active_record])
 
         args
