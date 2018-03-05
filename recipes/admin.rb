@@ -7,6 +7,8 @@ if prefer :admin, 'activeadmin'
   add_gem 'activeadmin', '~> 1.0.0.pre2'
 elsif prefer :admin, 'rails_admin'
   add_gem 'rails_admin'
+elsif prefer :admin, 'administrate'
+  add_gem 'administrate'
 end
 
 stage_two do
@@ -18,6 +20,10 @@ stage_two do
   if prefer :admin, 'rails_admin'
     say_wizard "recipe installing rails_admin"
     generate 'rails_admin:install'
+  end
+  if prefer :admin, 'administrate'
+    say_wizard "recipe installing administrate"
+    generate 'administrate:install'
   end
   ### GIT
   git :add => '-A' if prefer :git, true
@@ -39,4 +45,4 @@ config:
   - admin:
       type: multiple_choice
       prompt: Install admin gem?
-      choices: [ ["None", "none"], ["ActiveAdmin", "activeadmin"], ["RailsAdmin", "rails_admin"] ]
+      choices: [ ["None", "none"], ["ActiveAdmin", "activeadmin"], ["RailsAdmin", "rails_admin"], ["Administrate", "administrate"] ]
