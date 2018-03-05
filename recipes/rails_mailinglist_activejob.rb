@@ -4,7 +4,6 @@
 if prefer :apps4, 'rails-mailinglist-activejob'
   prefs[:authentication] = false
   prefs[:authorization] = false
-  prefs[:dashboard] = 'none'
   prefs[:better_errors] = true
   prefs[:form_builder] = 'simple_form'
   prefs[:git] = true

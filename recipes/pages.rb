@@ -25,7 +25,6 @@ end
 
 stage_four do
   say_wizard "recipe stage four"
-  generate 'administrate:install' if prefer :dashboard, 'administrate'
   case prefs[:layouts]
     when 'bare'
       generate 'theme:bare -f'
