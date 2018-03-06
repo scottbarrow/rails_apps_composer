@@ -87,17 +87,14 @@ end
 ## Front-end Framework
 add_gem 'rails_layout', :group => :development
 case prefs[:frontend]
-  when 'bootstrap2'
-    add_gem 'bootstrap-sass', '~> 2.3.2.2'
   when 'bootstrap3'
     add_gem 'bootstrap-sass'
   when 'bootstrap4'
     add_gem 'bootstrap', '~> 4.0.0'
-  when 'foundation4'
-    add_gem 'zurb-foundation', '~> 4.3.2'
-    add_gem 'compass-rails', '~> 1.1.2'
   when 'foundation5'
     add_gem 'foundation-rails', '~> 5.5'
+  when 'foundation6'
+    add_gem 'foundation-rails', '~> 6.4'
 end
 
 ## jQuery
@@ -213,9 +210,6 @@ stage_two do
   ## Form Builder
   if prefer :form_builder, 'simple_form'
     case prefs[:frontend]
-      when 'bootstrap2'
-        say_wizard "recipe installing simple_form for use with Bootstrap"
-        generate 'simple_form:install --bootstrap'
       when 'bootstrap3'
         say_wizard "recipe installing simple_form for use with Bootstrap"
         generate 'simple_form:install --bootstrap'
@@ -224,7 +218,7 @@ stage_two do
       when 'foundation5'
         say_wizard "recipe installing simple_form for use with Zurb Foundation"
         generate 'simple_form:install --foundation'
-      when 'foundation4'
+      when 'foundation6'
         say_wizard "recipe installing simple_form for use with Zurb Foundation"
         generate 'simple_form:install --foundation'
       else
