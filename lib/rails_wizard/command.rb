@@ -14,6 +14,7 @@ module RailsWizard
     method_option :quiet, :type => :boolean, :aliases => "-q", :default => false
     method_option :verbose, :type => :boolean, :aliases => "-V", :default => false
     def new(name)
+      raise "App with name '#{name}' already exists" if app_exists?(name)
       add_recipes
       recipes, defaults = load_defaults
       (print "\ndefaults: "; p defaults) if options[:verbose]
@@ -56,6 +57,10 @@ module RailsWizard
     end
 
     no_tasks do
+
+      def app_exists?(name)
+        File.exists?(name)
+      end
 
       def add_recipes
         Recipes.clear if options[:no_default_recipes]
