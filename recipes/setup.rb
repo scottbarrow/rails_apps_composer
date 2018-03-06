@@ -135,8 +135,9 @@ end
 __END__
 
 name: setup
-description: "Make choices for your application (db, layout, frontend, email, auth etc..)."
+description: "Make choices for your application (db, layout, frontend, form builder, email, auth etc..)."
 author: RailsApps
 
+requires: [gems]
 run_after: [git, parbaked]
 category: configuration
