@@ -179,7 +179,7 @@ end
 __END__
 
 name: init
-description: "Set up and initialize database."
+description: "Set up and initialize database, runs generators, seeds and inserts configs"
 author: RailsApps
 
 requires: [setup, gems, devise, omniauth]

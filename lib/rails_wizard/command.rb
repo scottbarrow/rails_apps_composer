@@ -74,16 +74,25 @@ module RailsWizard
       end
 
       def print_recipes(recipes)
-        say("\nAvailable Recipes:", [:bold, :cyan])
+        say("\nSelect from available Recipes:", [:bold, :cyan])
         RailsWizard::Recipes.categories.each do |category|
-          say("#{category} ", [:bold, :cyan])
-          a = RailsWizard::Recipes.for(category)
-          a.each_with_index do |e,i|
-            s = (a.length - 1 == i) ? "#{e}" : "#{e}, "
-            if recipes.include?(e)
-              say(s, [:bold, :green])
+          say("#{category}", [:bold, :cyan])
+          recipes_in_category = RailsWizard::Recipes.for(category)
+
+          recipes_in_category.each_with_index do |recipe,i|
+            recipe_desc = " - #{RailsWizard::Recipes.description_for(recipe)}"
+
+            #skip 'apps' descriptions
+            if category == "apps"
+              recipe_text = (recipes_in_category.length - 1 == i) ? "#{recipe}" : "#{recipe}, "
             else
-              say(s)
+              recipe_text = recipe + recipe_desc
+            end
+
+            if recipes.include?(recipe)
+              say(recipe_text, [:bold, :green])
+            else
+              say(recipe_text)
             end
           end
         end
@@ -109,7 +118,7 @@ module RailsWizard
 
       def prompt_for_recipes(recipes)
         print_recipes(recipes)
-        say("\nWhich recipe would you like to add? ", :bold)
+        say("\nWhich recipe(s) would you like to add? ", :bold)
         ask('(blank to finish)', :yellow)
       end
 
@@ -125,7 +134,7 @@ module RailsWizard
       end
 
       def prompt_for_gems
-        say('What gem would you like to add? ', :bold)
+        say('What additional gem(s) would you like to add? ', :bold)
         ask('(blank to finish)', :yellow)
       end
 

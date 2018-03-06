@@ -7,11 +7,11 @@ say_wizard "selected all core recipes"
 __END__
 
 name: core
-description: "Select all core recipes."
+description: "Core recipes known to work together (git, setup, readme, tests, email, devise etc...)"
 author: RailsApps
 
 requires: [git, parbaked,
-  learn_rails,
+  # learn_rails, #TODO replace with Ballistiq app types e.g. subscription, video site
   rails_bootstrap,
   rails_foundation,
   rails_omniauth,

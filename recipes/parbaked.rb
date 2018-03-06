@@ -69,7 +69,7 @@ end
 __END__
 
 name: parbaked
-description: "Install parbaked or customer Rails applications."
+description: "Install parbaked or custom Rails applications."
 author: RailsApps
 
 requires: [core]

@@ -81,7 +81,7 @@ end
 __END__
 
 name: pages
-description: "Add pages"
+description: "Add standard pages (home, about, users)"
 author: RailsApps
 
 requires: [setup, gems, frontend]
