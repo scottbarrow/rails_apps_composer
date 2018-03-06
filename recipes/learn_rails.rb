@@ -14,7 +14,6 @@ if prefer :apps4, 'learn-rails'
   prefs[:dev_webserver] = 'puma'
   prefs[:email] = 'sendgrid'
   prefs[:frontend] = 'bootstrap3'
-  prefs[:layouts] = 'none'
   prefs[:pages] = 'none'
   prefs[:github] = false
   prefs[:git] = true
