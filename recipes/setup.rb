@@ -87,9 +87,9 @@ if (recipes.include? 'devise') || (recipes.include? 'omniauth')
 end
 
 ## Form Builder
-  prefs[:form_builder] = multiple_choice "Use a form builder gem?", [["None", "none"], ["SimpleForm", "simple_form"]] unless prefs.has_key? :form_builder
 unless prefs.has_key? :form_builder
   prefs[:form_builder] = multiple_choice "Use a form builder gem?", [["None", "none"],
+  ["SimpleForm", "simple_form"], ["Formtastic", "formtastic"]]
 end
 
 ## Pages

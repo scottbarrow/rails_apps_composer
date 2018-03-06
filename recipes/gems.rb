@@ -134,7 +134,12 @@ add_gem 'omniauth-tumblr' if prefer :omniauth_provider, 'tumblr'
 add_gem 'pundit' if prefer :authorization, 'pundit'
 
 ## Form Builder
-add_gem 'simple_form' if prefer :form_builder, 'simple_form'
+case prefs[:form_builder]
+  when 'simple_form'
+    add_gem 'simple_form'
+  when 'formtastic'
+    add_gem 'formtastic', '~> 3.0'
+end
 
 ## Gems from a defaults file or added interactively
 gems.each do |g|
@@ -229,6 +234,11 @@ stage_two do
         generate 'simple_form:install'
     end
   end
+  if prefer :form_builder, 'formtastic'
+    say_wizard "recipe installing formtastic"
+    generate 'formtastic:install'
+  end
+
   ## Figaro Gem
   if prefer :local_env_file, 'figaro'
     run 'figaro install'
