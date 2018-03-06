@@ -26,7 +26,7 @@ end
 __END__
 
 name: pages
-description: "Add standard pages (home, about, users)"
+description: "Add standard pages (home, about, users), using high_voltage gem"
 author: RailsApps
 
 requires: [setup, gems, frontend]
