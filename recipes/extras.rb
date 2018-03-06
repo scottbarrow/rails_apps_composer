@@ -145,8 +145,9 @@ if prefs[:github]
       say_wizard "Repository already exists:"
       say_wizard "#{git_uri}"
     else
-      run "hub create #{app_name}"
-      run "hub push -u origin master"
+      3.times do
+        break if run "hub create #{app_name}" and run "hub push -u origin master"
+      end
     end
   end
 end
@@ -154,7 +155,7 @@ end
 __END__
 
 name: extras
-description: "Various extras."
+description: "Extras inc. hub, pry, rubocop, env management, create repo"
 author: RailsApps
 
 requires: [gems]
