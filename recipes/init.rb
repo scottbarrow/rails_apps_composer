@@ -152,8 +152,10 @@ FILE
       when 'bootstrap3'
         generate 'layout:devise bootstrap3 -f'
       when 'bootstrap4'
-        generate 'layout:devise bootstrap3 -f'
+        generate 'layout:devise bootstrap4 -f'
       when 'foundation5'
+        generate 'layout:devise foundation5 -f'
+      when 'foundation6'
         generate 'layout:devise foundation5 -f'
     end
   end
