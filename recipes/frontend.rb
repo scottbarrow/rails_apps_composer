@@ -2,6 +2,8 @@
 # https://github.com/RailsApps/rails_apps_composer/blob/master/recipes/frontend.rb
 
 stage_two do
+  stylesheet_path = "app/assets/stylesheets"
+
   say_wizard "recipe stage two"
   # set up a front-end framework using the rails_layout gem
   case prefs[:frontend]
@@ -15,6 +17,17 @@ stage_two do
       generate 'layout:install foundation5 -f'
     when 'foundation6'
       generate 'layout:install foundation6 -f'
+    when 'tachyons'
+      # css
+      if File.file?("#{stylesheet_path}/application.css")
+        inject_into_file "#{stylesheet_path}/application.css", " *= require tachyons-min\n", before: " */"
+      # css.scss
+      elsif File.file?("#{stylesheet_path}/application.css.scss")
+        inject_into_file "#{stylesheet_path}/application.css.scss", " *= require tachyons-min\n", before: " */"
+      # scss
+      elsif File.file?("#{stylesheet_path}/application.scss")
+        inject_into_file "#{stylesheet_path}/application.scss", " @import tachyons-min\n", before: " */"
+      end
     else
       case prefs[:jquery]
         when 'gem', 'yarn'

@@ -95,6 +95,8 @@ case prefs[:frontend]
     add_gem 'foundation-rails', '~> 5.5'
   when 'foundation6'
     add_gem 'foundation-rails', '~> 6.4'
+  when 'tachyons'
+    add_gem 'tachyons-rails', '~> 4.8'
 end
 
 ## jQuery

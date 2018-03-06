@@ -44,7 +44,7 @@ if recipes.include? 'frontend'
   prefs[:frontend] = multiple_choice "Front-end framework?", [["None", "none"],
     ["Bootstrap 4.0", "bootstrap4"], ["Bootstrap 3.3", "bootstrap3"],
     ["Zurb Foundation 5.5", "foundation5"], ["Zurb Foundation 6.4", "foundation6"],
-    ["Simple CSS", "simple"]] unless prefs.has_key? :frontend
+    ["Simple CSS", "simple"], ["Tachyons", "tachyons"]] unless prefs.has_key? :frontend
 end
 
 ## jQuery
