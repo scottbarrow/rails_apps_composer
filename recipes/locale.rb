@@ -17,6 +17,8 @@ stage_two do
     locale_filename = "config/locales/#{prefs[:locale]}.yml"
     create_file locale_filename
     append_to_file locale_filename, "#{prefs[:locale]}:"
+
+    generate "devise:i18n:views" if prefer :authentication, 'devise'
   end
 end
 
