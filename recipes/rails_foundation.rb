@@ -7,7 +7,8 @@ if prefer :apps4, 'rails-foundation'
   prefs[:better_errors] = true
   prefs[:devise_modules] = false
   prefs[:email] = 'none'
-  prefs[:frontend] = 'foundation5'
+  prefs[:frontend] = multiple_choice "Front-end framework?",
+    [["Zurb Foundation 5.5", "foundation5"], ["Zurb Foundation 6.4", "foundation6"]] unless prefs.has_key? :frontend
   prefs[:git] = true
   prefs[:local_env_file] = false
   prefs[:pry] = false
