@@ -45,7 +45,6 @@ rails3-mongoid-omniauth
 rails3-subdomains
 rails-prelaunch-signup
 rails-recurly-subscription-saas
-rails-stripe-membership-saas
 =end
 
 CREATE_REPOSITORY_LIST_SCRIPT = <<BASH
