@@ -51,7 +51,7 @@ end
 __END__
 
 name: tests
-description: "Add testing framework."
+description: "Add testing framework and live reload."
 author: RailsApps
 
 requires: [setup, gems]
