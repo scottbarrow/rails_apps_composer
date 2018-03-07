@@ -80,19 +80,13 @@ module RailsWizard
 
       def print_recipes(recipes)
         say("\nSelect from available Recipes:", [:bold, :cyan])
-        RailsWizard::Recipes.categories.each do |category|
+        RailsWizard::Recipes.quiz_categories.each do |category|
           say("#{category}", [:bold, :cyan])
           recipes_in_category = RailsWizard::Recipes.for(category)
 
           recipes_in_category.each_with_index do |recipe,i|
             recipe_desc = " - #{RailsWizard::Recipes.description_for(recipe)}"
-
-            #skip 'apps' descriptions
-            if category == "apps"
-              recipe_text = (recipes_in_category.length - 1 == i) ? "#{recipe}" : "#{recipe}, "
-            else
-              recipe_text = recipe + recipe_desc
-            end
+            recipe_text = recipe + recipe_desc
 
             if recipes.include?(recipe)
               say(recipe_text, [:bold, :green])

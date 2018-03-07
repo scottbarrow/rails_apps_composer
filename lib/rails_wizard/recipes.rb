@@ -1,13 +1,12 @@
 module RailsWizard
   module Recipes
-    @@excluded_recipes = ["example"]
+    @@excluded_categories = ["example", "apps"]
     @@categories = {}
     @@list = {}
     @@descriptions = {}
 
     def self.add(recipe)
       RailsWizard::Recipes.const_set ActiveSupport::Inflector.camelize(recipe.key), recipe
-      return if @@excluded_recipes.include? recipe.key
       @@list[recipe.key] = recipe
       (@@categories[recipe.category.to_s] ||= []) << recipe.key
       @@categories[recipe.category.to_s].uniq!
@@ -36,8 +35,11 @@ module RailsWizard
     end
 
     def self.categories
-      # move 'apps' to last position
-      @@categories.keys.sort { |x,y| y  == "apps" ? -1 : x <=> y }
+      @@categories.keys.sort
+    end
+
+    def self.quiz_categories
+      categories - @@excluded_categories
     end
 
     def self.description_for(recipe)
