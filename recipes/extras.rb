@@ -59,7 +59,7 @@ prefs[:rubocop] = true if config['rubocop']
 if prefs[:rubocop]
   say_wizard "recipe adding rubocop gem and basic .rubocop.yml"
   add_gem 'rubocop', :group => [:development, :test]
-  copy_from_repo '.rubocop.yml'
+  create_file '.rubocop.yml'
 end
 
 ## Disable Turbolinks
