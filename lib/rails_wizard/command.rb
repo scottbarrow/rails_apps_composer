@@ -160,6 +160,9 @@ module RailsWizard
         default_args = defaults["args"] || {}
         s = 'Would you like to skip'
 
+        question = "API only Rails application?"
+        args << "--api" if ask_for_arg(question)
+
         question = "#{s} Test::Unit? (choose y if installing RSpec)"
         args << "-T" if ask_for_arg(question, default_args[:skip_test_unit])
 
